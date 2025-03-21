@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, User, Menu, X } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,9 +25,15 @@ const Navbar = () => {
                     {/* Left Side - Menu Items */}
                     <div className="hidden md:flex space-x-8">
                         <button className="text-gray-700 hover:text-gray-900 font-medium">Home</button>
-                        <button className="text-gray-700 hover:text-gray-900 font-medium">Listings</button>
-                        <button className="text-gray-700 hover:text-gray-900 font-medium">Members</button>
-                        <button className="text-gray-700 hover:text-gray-900 font-medium">Blog</button>
+                        <button className="text-gray-700 hover:text-gray-900 font-medium">
+                            <Link to="/listings">Listings</Link>
+                        </button>
+                        <button className="text-gray-700 hover:text-gray-900 font-medium">
+                            <Link to="/members">Members</Link>
+                        </button>
+                        <button className="text-gray-700 hover:text-gray-900 font-medium">
+                            <Link to="/blog">Blogs</Link>
+                        </button>
 
                         {/* Dropdown for Pages */}
                         <div className="relative">
@@ -58,7 +65,9 @@ const Navbar = () => {
                             )}
                         </div>
 
-                        <button className="text-gray-700 hover:text-gray-900 font-medium">Contact</button>
+                        <button className="text-gray-700 hover:text-gray-900 font-medium">
+                            <Link to="/contact">Contact</Link>
+                        </button>
                     </div>
 
                     {/* Logo */}
@@ -70,7 +79,9 @@ const Navbar = () => {
                                     <path d="M9 22V12H15V22" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </div>
-                            <span className="ml-2 text-xl font-bold text-gray-800">FlatsAI</span>
+                            <span className="ml-2 text-xl font-bold text-gray-800">
+                                <Link to="/">FlatsAI</Link>
+                            </span>
                         </div>
                     </div>
 
@@ -78,12 +89,14 @@ const Navbar = () => {
                     <div className="hidden md:flex items-center space-x-4">
                         <div className="flex items-center text-gray-700">
                             <Phone className="h-5 w-5" />
-                            <span className="ml-2">+68 685 88666</span>
+                            <span className="ml-2">+91 9031036321</span>
                         </div>
 
-                        <div className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 cursor-pointer">
-                            <User className="h-5 w-5 text-gray-700" />
-                        </div>
+                        <Link to="/login">
+                            <div className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 cursor-pointer">
+                                <User className="h-5 w-5 text-gray-700" />
+                            </div>
+                        </Link>
 
                         <a href="#" className="bg-white hover:bg-gray-50 text-gray-800 font-medium py-2 px-4 border border-gray-300 rounded-md shadow-sm">
                             Add Property
