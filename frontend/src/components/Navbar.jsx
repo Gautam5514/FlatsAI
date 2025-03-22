@@ -116,12 +116,22 @@ const Navbar = () => {
             {isMenuOpen && (
                 <div className="md:hidden">
                     <div className="px-2 pt-2 pb-3 space-y-1">
-                        <button className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900">Home</button>
-                        <button className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900">Listings</button>
-                        <button className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900">Members</button>
-                        <button className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900">Blog</button>
+                        <button className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900">
+                            <Link to="/">Home</Link>
+                        </button>
+                        <button className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900">
+                            <Link to="/listings">Listings</Link>
+                        </button>
+                        <button className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900">
+                            <Link to="/members">Members</Link>
+                        </button>
+                        <button className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900">
+                            <Link to="/blog">Blogs</Link>
+                        </button>
                         <button className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900">Pages</button>
-                        <button className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900">Contact</button>
+                        <button className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900">
+                            <Link to="/contact">Contact</Link>
+                        </button>
                     </div>
                 </div>
             )}

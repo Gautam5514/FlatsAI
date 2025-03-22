@@ -5,37 +5,37 @@ const PropertyCategories = () => {
     const categories = [
         {
             id: 1,
-            title: "Town House",
+            title: "Noida",
             count: 2,
-            image: "./background.webp",
+            image: "./noidacity.jpg",
             bgColor: "bg-blue-200",
         },
         {
             id: 2,
-            title: "Modern Villa",
+            title: "Dholera",
             count: 10,
-            image: "./background.webp",
+            image: "./dholera.jpg",
             bgColor: "bg-blue-300",
         },
         {
             id: 3,
-            title: "Apartment",
+            title: "Vrindavan",
             count: 3,
-            image: "./background.webp",
+            image: "./prem.jpg",
             bgColor: "bg-blue-200",
         },
         {
             id: 4,
-            title: "Single Family",
+            title: "Mumbai",
             count: 5,
-            image: "./background.webp",
+            image: "./gateway.jpg",
             bgColor: "bg-blue-200",
         },
         {
             id: 5,
-            title: "Office",
+            title: "Delhi-NCR",
             count: 3,
-            image: "./background.webp",
+            image: "./india.jpg",
             bgColor: "bg-blue-200",
         },
     ];
@@ -45,8 +45,8 @@ const PropertyCategories = () => {
             <div className="max-w-6xl mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold text-gray-800 mb-2">Explore Our Properties</h2>
-                    <p className="text-gray-600">Lorem ipsum dolor sit amet</p>
+                    <h2 className="text-3xl font-bold text-gray-800 mb-2">Explore The City</h2>
+                    {/* <p className="text-gray-600">Lorem ipsum dolor sit amet</p> */}
                 </div>
 
                 {/* Property Categories Grid */}

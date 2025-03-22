@@ -9,19 +9,19 @@ const PropertyDealsCarousel = () => {
         {
             id: 1,
             title: "Skyper Pool Apartment",
-            address: "1020 Bloomingdale Ave",
+            address: "Ace Starlit, Noida",
             type: "FOR SALE",
             featured: false,
             price: "$280,000",
             beds: 4,
             baths: 2,
             sqft: 450,
-            image: "/background.webp"
+            image: "/noida.jpg"
         },
         {
             id: 2,
-            title: "North Dillard Street",
-            address: "4330 Bell Shoals Rd",
+            title: "Samriddhi Park",
+            address: "Ara Gate, Ranchi",
             type: "FOR RENT",
             featured: false,
             price: "$250",
@@ -29,31 +29,31 @@ const PropertyDealsCarousel = () => {
             beds: 4,
             baths: 2,
             sqft: 400,
-            image: "/background.webp"
+            image: "/ara.jpg"
         },
         {
             id: 3,
             title: "Eaton Garth Penthouse",
-            address: "7722 18th Ave, Brooklyn",
+            address: "Savitri Enclave",
             type: "FOR SALE",
             featured: true,
             price: "$180,000",
             beds: 4,
             baths: 2,
             sqft: 450,
-            image: "/background.webp"
+            image: "/samlong.jpg"
         },
         {
             id: 4,
-            title: "Luxury Downtown Condo",
-            address: "1203 Broadway Ave",
+            title: "Royal Residency",
+            address: "pundag near IIM Ranchi",
             type: "FOR SALE",
             featured: false,
             price: "$320,000",
             beds: 3,
             baths: 2,
             sqft: 500,
-            image: "/background.webp"
+            image: "/royal.jpg"
         }
     ];
 

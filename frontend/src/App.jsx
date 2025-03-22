@@ -25,8 +25,9 @@ function App() {
                         <>
                             <HeroSection />
                             <SearchBar />
-                            <PropertyCategories />
                             <PropertyDealsCarousel />
+                            <PropertyCategories />
+
                         </>
                     } />
                     <Route path="/contact" element={<ContactUs />} />
@@ -35,7 +36,7 @@ function App() {
                     <Route path="/listings" element={<Listings />} />
                     <Route path="/members" element={<Members />} />
                     <Route path="/blog" element={<Blog />} />
-                    <Route path="/login" element={<LoginForm />}/>
+                    <Route path="/login" element={<LoginForm />} />
                 </Routes>
                 <Footer />
             </div>
