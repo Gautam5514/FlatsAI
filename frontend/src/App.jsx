@@ -13,7 +13,12 @@ import Listings from "./components/Listings";
 import Members from "./components/Members";
 import Blog from "./components/Blogs";
 import LoginForm from "./pages/LoginForm";
-import LocationDetail from "./components/LocationDetail";
+// import LocationDetail from "./components/LocationDetail";
+import Noida from "./pages/Noida";
+import Dholera from "./pages/Dholera";
+import Vrindavan from "./pages/Vrindavan";
+import Mumbai from "./pages/Mumbai";
+import DelhiNCR from "./pages/DelhiNCR";
 
 function App() {
     return (
@@ -40,7 +45,12 @@ function App() {
                     <Route path="/login" element={<LoginForm />} />
                     {/* For the location */}
                     <Route path="/" element={<PropertyCategories />} />
-                    <Route path="/location/:location" element={<LocationDetail />} />
+                    {/* <Route path="/location/:location" element={<LocationDetail />} /> */}
+                    <Route path="/location/noida" element={<Noida />} />
+                    <Route path="/location/dholera" element={<Dholera />} />
+                    <Route path="/location/vrindavan" element={<Vrindavan />} />
+                    <Route path="/location/mumbai" element={<Mumbai />} />
+                    <Route path="/location/delhincr" element={<DelhiNCR />} />
                 </Routes>
                 <Footer />
             </div>
