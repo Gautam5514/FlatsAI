@@ -13,6 +13,7 @@ import Listings from "./components/Listings";
 import Members from "./components/Members";
 import Blog from "./components/Blogs";
 import LoginForm from "./pages/LoginForm";
+import LocationDetail from "./components/LocationDetail";
 
 function App() {
     return (
@@ -37,6 +38,9 @@ function App() {
                     <Route path="/members" element={<Members />} />
                     <Route path="/blog" element={<Blog />} />
                     <Route path="/login" element={<LoginForm />} />
+                    {/* For the location */}
+                    <Route path="/" element={<PropertyCategories />} />
+                    <Route path="/location/:location" element={<LocationDetail />} />
                 </Routes>
                 <Footer />
             </div>
