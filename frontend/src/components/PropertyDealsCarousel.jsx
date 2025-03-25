@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { MapPin, Bed, Bath, Square } from 'lucide-react';
+import React from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import { MapPin, Bed, Bath, Square } from "lucide-react";
 
 const PropertyDealsCarousel = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-
-    // Property listings data
     const properties = [
         {
             id: 1,
@@ -12,11 +11,10 @@ const PropertyDealsCarousel = () => {
             address: "Noida",
             type: "FOR SALE",
             featured: false,
-            // price: "$280,000",
             beds: 4,
             baths: 2,
             sqft: 450,
-            image: "/noida.jpg"
+            image: "/noida.jpg",
         },
         {
             id: 2,
@@ -24,12 +22,10 @@ const PropertyDealsCarousel = () => {
             address: "Ara Gate, Ranchi",
             type: "FOR SALE",
             featured: false,
-            // price: "$250",
-            // priceUnit: "/month",
             beds: 4,
             baths: 2,
             sqft: 400,
-            image: "/ara.jpg"
+            image: "/ara.jpg",
         },
         {
             id: 3,
@@ -37,40 +33,39 @@ const PropertyDealsCarousel = () => {
             address: "Samlong Ranchi",
             type: "FOR SALE",
             featured: true,
-            // price: "$180,000",
             beds: 4,
             baths: 2,
             sqft: 450,
-            image: "/samlong.jpg"
+            image: "/samlong.jpg",
         },
         {
             id: 4,
             title: "Royal Residency",
-            address: "pundag near IIM Ranchi",
+            address: "Pundag near IIM Ranchi",
             type: "FOR SALE",
             featured: false,
-            // price: "$320,000",
             beds: 3,
             baths: 2,
             sqft: 500,
-            image: "/royal.jpg"
-        }
+            image: "/royal.jpg",
+        },
     ];
 
-    // Navigate to next slide
-    const nextSlide = () => {
-        setCurrentSlide((prev) => (prev === Math.ceil(properties.length / 3) - 1 ? 0 : prev + 1));
+    const responsive = {
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 3, // Show three items at a time
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2, // Show two items at a time
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1, // Show one item at a time
+        },
     };
 
-    // Navigate to previous slide
-    const prevSlide = () => {
-        setCurrentSlide((prev) => (prev === 0 ? Math.ceil(properties.length / 3) - 1 : prev - 1));
-    };
-
-    // Get current visible properties
-    const visibleProperties = properties.slice(currentSlide * 3, (currentSlide * 3) + 3);
-
-    // Get badge color based on property type
     const getBadgeColor = (type) => {
         if (type === "FOR SALE") return "bg-green-800";
         if (type === "FOR RENT") return "bg-blue-800";
@@ -82,24 +77,49 @@ const PropertyDealsCarousel = () => {
             <div className="max-w-6xl mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold text-gray-800 mb-2">Discover Our Best Deals</h2>
+                    <h2 className="text-3xl font-bold text-gray-800 mb-2">
+                        Discover Our Best Deals
+                    </h2>
                     <p className="text-gray-600">Lorem ipsum dolor sit amet</p>
                 </div>
 
-                {/* Property Listings */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {visibleProperties.map((property) => (
-                        <div key={property.id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                {/* Carousel */}
+                <Carousel
+                    responsive={responsive}
+                    swipeable={true}
+                    draggable={true}
+                    showDots={true}
+                    infinite={true}
+                    autoPlay={true}
+                    autoPlaySpeed={5000}
+                    keyBoardControl={true}
+                    customTransition="transform 300ms ease-in-out"
+                    transitionDuration={500}
+                    partialVisible={true} // Use partialVisible
+                    itemClass="px-4"
+                >
+
+
+
+                    {properties.map((property) => (
+                        <div
+                            key={property.id}
+                            className="bg-white rounded-lg shadow-md hover:bg-gray-100 transition-shadow"
+                        >
                             {/* Property Image */}
                             <div className="relative">
                                 <img
                                     src={property.image}
                                     alt={property.title}
-                                    className="w-full h-64 object-cover"
+                                    className="w-full h-64 object-cover rounded-t-lg"
                                 />
-                                {/* Property Status Badge */}
+                                {/* Status badges */}
                                 <div className="absolute top-4 left-4 flex space-x-2">
-                                    <span className={`${getBadgeColor(property.type)} text-white text-xs px-3 py-1 rounded-md font-medium`}>
+                                    <span
+                                        className={`${getBadgeColor(
+                                            property.type
+                                        )} text-white text-xs px-3 py-1 rounded-md font-medium`}
+                                    >
                                         {property.type}
                                     </span>
                                     {property.featured && (
@@ -115,49 +135,28 @@ const PropertyDealsCarousel = () => {
                                 <h3 className="font-bold text-xl mb-2">{property.title}</h3>
                                 <div className="flex items-center text-gray-600 mb-4">
                                     <MapPin size={16} className="mr-1" />
-                                    <span className="text-sm">{property.address}</span>
+                                    <span>{property.address}</span>
                                 </div>
-
-                                {/* Property Features */}
                                 <div className="flex justify-between items-center">
                                     <div className="flex space-x-4">
                                         <div className="flex items-center text-gray-600">
                                             <Bed size={16} className="mr-1" />
-                                            <span className="text-sm">{property.beds}</span>
+                                            <span>{property.beds}</span>
                                         </div>
                                         <div className="flex items-center text-gray-600">
                                             <Bath size={16} className="mr-1" />
-                                            <span className="text-sm">{property.baths}</span>
+                                            <span>{property.baths}</span>
                                         </div>
                                         <div className="flex items-center text-gray-600">
                                             <Square size={16} className="mr-1" />
-                                            <span className="text-sm">{property.sqft}</span>
+                                            <span>{property.sqft} sqft</span>
                                         </div>
-                                    </div>
-                                    <div className="text-right">
-                                        <span className="font-bold text-xl text-orange-500">
-                                            {property.price}
-                                            <span className="text-sm">{property.priceUnit || ""}</span>
-                                        </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     ))}
-                </div>
-
-                {/* Pagination Dots */}
-                <div className="flex justify-center mt-8 space-x-2">
-                    {Array.from({ length: Math.ceil(properties.length / 3) }).map((_, index) => (
-                        <button
-                            key={index}
-                            onClick={() => setCurrentSlide(index)}
-                            className={`h-3 w-3 rounded-full ${currentSlide === index ? "bg-gray-800" : "bg-gray-300"
-                                }`}
-                            aria-label={`Go to slide ${index + 1}`}
-                        />
-                    ))}
-                </div>
+                </Carousel>
             </div>
         </section>
     );
