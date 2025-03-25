@@ -22,7 +22,7 @@ const PropertyDealsCarousel = () => {
             id: 2,
             title: "Samriddhi Park",
             address: "Ara Gate, Ranchi",
-            type: "FOR RENT",
+            type: "FOR SALE",
             featured: false,
             // price: "$250",
             // priceUnit: "/month",
