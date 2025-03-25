@@ -19,6 +19,7 @@ import Dholera from "./pages/Dholera";
 import Vrindavan from "./pages/Vrindavan";
 import Mumbai from "./pages/Mumbai";
 import DelhiNCR from "./pages/DelhiNCR";
+import RealEstateServices from "./components/MaterialAdd";
 
 function App() {
     return (
@@ -31,9 +32,12 @@ function App() {
                         <>
                             <HeroSection />
                             <SearchBar />
-                            <PropertyDealsCarousel />
                             <PropertyCategories />
-
+                            <PropertyDealsCarousel />
+                            <RealEstateServices />
+                            
+                            
+                            
                         </>
                     } />
                     <Route path="/contact" element={<ContactUs />} />
