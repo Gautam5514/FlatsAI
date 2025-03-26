@@ -12,14 +12,21 @@ import Services from "./components/Services";
 import Listings from "./components/Listings";
 import Members from "./components/Members";
 import Blog from "./components/Blogs";
-import LoginForm from "./pages/LoginForm";
-// import LocationDetail from "./components/LocationDetail";
 import Noida from "./pages/Noida";
 import Dholera from "./pages/Dholera";
 import Vrindavan from "./pages/Vrindavan";
 import Mumbai from "./pages/Mumbai";
 import DelhiNCR from "./pages/DelhiNCR";
 import RealEstateServices from "./components/MaterialAdd";
+import ResidentialRentals from "./pages/ResidentialRental";
+import PropertyPurchase from "./pages/PropertyPurchase";
+import BuilderPartnerships from "./pages/BuilderPartner";
+import InteriorDesign from "./pages/InteriorDesign";
+import InsightsTools from "./components/Insight";
+import EMICalculator from "./pages/Emi";
+import AreaConverter from "./pages/AreaConverter";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 
 function App() {
     return (
@@ -35,9 +42,9 @@ function App() {
                             <PropertyCategories />
                             <PropertyDealsCarousel />
                             <RealEstateServices />
-                            
-                            
-                            
+                            <InsightsTools />
+
+
                         </>
                     } />
                     <Route path="/contact" element={<ContactUs />} />
@@ -46,7 +53,8 @@ function App() {
                     <Route path="/listings" element={<Listings />} />
                     <Route path="/members" element={<Members />} />
                     <Route path="/blog" element={<Blog />} />
-                    <Route path="/login" element={<LoginForm />} />
+                    <Route path="/signup" element={<Signup />} />
+                    <Route path="/login" element={<Login />}/>
                     {/* For the location */}
                     <Route path="/" element={<PropertyCategories />} />
                     {/* <Route path="/location/:location" element={<LocationDetail />} /> */}
@@ -55,6 +63,16 @@ function App() {
                     <Route path="/location/vrindavan" element={<Vrindavan />} />
                     <Route path="/location/mumbai" element={<Mumbai />} />
                     <Route path="/location/delhincr" element={<DelhiNCR />} />
+
+                    <Route path="/" element={<RealEstateServices />} />
+                    {/* Individual Service Routes */}
+                    <Route path="/residential-rentals" element={<ResidentialRentals />} />
+                    <Route path="/property-purchase" element={<PropertyPurchase />} />
+                    <Route path="/builder-partnerships" element={<BuilderPartnerships />} />
+                    <Route path="/interior-design" element={<InteriorDesign />} />
+
+                    <Route path="/emi" element={< EMICalculator />}/>
+                    <Route path="/area-converter" element={<AreaConverter />}/>
                 </Routes>
                 <Footer />
             </div>

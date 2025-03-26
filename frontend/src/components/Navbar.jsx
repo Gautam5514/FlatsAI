@@ -92,7 +92,7 @@ const Navbar = () => {
                             <span className="ml-2">+91 9031036321</span>
                         </div>
 
-                        <Link to="/login">
+                        <Link to="/signup">
                             <div className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 cursor-pointer">
                                 <User className="h-5 w-5 text-gray-700" />
                             </div>

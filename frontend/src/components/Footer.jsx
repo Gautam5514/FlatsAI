@@ -30,7 +30,7 @@ const Footer = () => {
                         <ul className="text-gray-700">
                             <li className="mb-2"> Sector 2, Greater Noida West, Uttar Pradesh, India</li>
                             <li className="mb-2">Phone: +91 9031036321</li>
-                            <li className="mb-2">Email: info@realestateco.com</li>
+                            <li className="mb-2">Email: Contact@FlatsAI.com </li>
                         </ul>
                     </div>
 
