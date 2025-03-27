@@ -19,7 +19,7 @@ const tools = [
 
 export default function InsightsTools() {
     return (
-        <div className="min-h-screen flex justify-center items-center bg-gradient-to-r from-blue-100 to-green-500 p-6">
+        <div className="min-h-screen flex justify-center items-center bg-gradient-to-r from-blue-50 to-green-100 p-6">
             <div className="bg-white p-8 rounded-xl shadow-lg max-w-4xl w-full">
                 <div className="flex justify-center items-center space-x-3 mb-6">
                     <div className="bg-blue-600 text-white p-4 rounded-full">

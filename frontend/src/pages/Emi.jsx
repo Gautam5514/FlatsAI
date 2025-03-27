@@ -20,7 +20,7 @@ export default function EMICalculator() {
     };
 
     return (
-        <div className="min-h-screen flex justify-center items-center bg-gradient-to-r from-blue-100 to-green-400 p-6">
+        <div className="min-h-screen flex justify-center items-center bg-gradient-to-r from-blue-50 to-green-100 p-6">
             <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}

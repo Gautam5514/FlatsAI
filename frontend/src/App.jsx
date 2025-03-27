@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+ 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
@@ -27,57 +28,154 @@ import EMICalculator from "./pages/Emi";
 import AreaConverter from "./pages/AreaConverter";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import ProtectedRoute from "./pages/ProtectedRouts";
 
 function App() {
-    return (
-        <Router>
-            <div className="font-sans bg-green-100 min-h-screen">
-                <Navbar />
-                <Routes>
-                    {/* Home page with multiple components */}
-                    <Route path="/" element={
-                        <>
-                            <HeroSection />
-                            <SearchBar />
-                            <PropertyCategories />
-                            <PropertyDealsCarousel />
-                            <RealEstateServices />
-                            <InsightsTools />
+ 
 
+  return (
+    <Router>
+      <div className="font-sans bg-green-100 min-h-screen">
+        <Navbar />
+        <Routes>
+          {/* Public Routes */}
+          <Route path="/contact" element={ <ContactUs /> }/>
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/services" element={<Services />} />
+          <Route
+            path="/listings"
+            element={
+              <ProtectedRoute>
+                <Listings />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/members" element={<Members />} />
+          <Route
+            path="/blog"
+            element={
+              <ProtectedRoute>
+                <Blog />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
 
-                        </>
-                    } />
-                    <Route path="/contact" element={<ContactUs />} />
-                    <Route path="/about" element={<AboutUs />} />
-                    <Route path="/services" element={<Services />} />
-                    <Route path="/listings" element={<Listings />} />
-                    <Route path="/members" element={<Members />} />
-                    <Route path="/blog" element={<Blog />} />
-                    <Route path="/signup" element={<Signup />} />
-                    <Route path="/login" element={<Login />}/>
-                    {/* For the location */}
-                    <Route path="/" element={<PropertyCategories />} />
-                    {/* <Route path="/location/:location" element={<LocationDetail />} /> */}
-                    <Route path="/location/noida" element={<Noida />} />
-                    <Route path="/location/dholera" element={<Dholera />} />
-                    <Route path="/location/vrindavan" element={<Vrindavan />} />
-                    <Route path="/location/mumbai" element={<Mumbai />} />
-                    <Route path="/location/delhincr" element={<DelhiNCR />} />
+          {/* Private Routes (Protected) */}
+          <Route
+            path="/"
+            element={
+              <>
+                <HeroSection />
+                <SearchBar />
+                <AboutUs />
+                <PropertyCategories />
+                <PropertyDealsCarousel />
+                <RealEstateServices />
+                <InsightsTools />
+              </>
+            }
+          />
 
-                    <Route path="/" element={<RealEstateServices />} />
-                    {/* Individual Service Routes */}
-                    <Route path="/residential-rentals" element={<ResidentialRentals />} />
-                    <Route path="/property-purchase" element={<PropertyPurchase />} />
-                    <Route path="/builder-partnerships" element={<BuilderPartnerships />} />
-                    <Route path="/interior-design" element={<InteriorDesign />} />
+          {/* Location Pages (Protected) */}
+          <Route
+            path="/location/noida"
+            element={
+              <ProtectedRoute>
+                <Noida />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/location/dholera"
+            element={
+              <ProtectedRoute>
+                <Dholera />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/location/vrindavan"
+            element={
+              <ProtectedRoute>
+                <Vrindavan />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/location/mumbai"
+            element={
+              <ProtectedRoute>
+                <Mumbai />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/location/delhincr"
+            element={
+              <ProtectedRoute>
+                <DelhiNCR />
+              </ProtectedRoute>
+            }
+          />
 
-                    <Route path="/emi" element={< EMICalculator />}/>
-                    <Route path="/area-converter" element={<AreaConverter />}/>
-                </Routes>
-                <Footer />
-            </div>
-        </Router>
-    );
+          {/* Service Pages (Protected) */}
+          <Route
+            path="/residential-rentals"
+            element={
+              <ProtectedRoute>
+                <ResidentialRentals />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/property-purchase"
+            element={
+              <ProtectedRoute>
+                <PropertyPurchase />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/builder-partnerships"
+            element={
+              <ProtectedRoute>
+                <BuilderPartnerships />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/interior-design"
+            element={
+              <ProtectedRoute>
+                <InteriorDesign />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* Tools (Protected) */}
+          <Route
+            path="/emi"
+            element={
+              <ProtectedRoute>
+                <EMICalculator />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/area-converter"
+            element={
+              <ProtectedRoute>
+                <AreaConverter />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
+  );
 }
 
 export default App;

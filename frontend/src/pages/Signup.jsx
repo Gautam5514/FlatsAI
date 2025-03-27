@@ -1,59 +1,130 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { signup } from "../../api";
 
 const Signup = () => {
     const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        address: '',
-        district: '',
-        state: '',
-        pincode: '',
-        email: '',
-        password: '',
+        firstName: "",
+        lastName: "",
+        address: "",
+        district: "",
+        state: "",
+        pincode: "",
+        email: "",
+        password: "",
     });
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
+    const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleChange = (e) =>
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
-        // Handle form submission logic here
+        const res = await signup(formData);
+        if (res.message === "Signup successful, please login") navigate("/login");
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-green-100">
-            <form
-                onSubmit={handleSubmit}
-                className="bg-green-50 p-8 rounded-lg shadow-lg w-96 transition-transform transform hover:scale-105"
-            >
-                <h2 className="text-2xl font-bold mb-6 text-center">SignUP</h2>
-                {Object.keys(formData).map((key) => (
-                    <div key={key} className="mb-4">
-                        <label className="block text-sm font-medium text-gray-700" htmlFor={key}>
-                            {key.charAt(0).toUpperCase() + key.slice(1)}
-                        </label>
+        <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-green-100">
+            <div className="w-96 bg-white p-10 rounded-2xl shadow-xl">
+                <h2 className="text-2xl font-bold text-center text-green-700 mb-6">
+                    Create an Account
+                </h2>
+
+                <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
                         <input
-                            type={key === 'password' ? 'password' : 'text'}
-                            name={key}
-                            id={key}
-                            value={formData[key]}
+                            type="text"
+                            name="firstName"
+                            placeholder="First Name"
+                            className="border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-500"
                             onChange={handleChange}
-                            placeholder={`Enter your ${key}`}
-                            className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-150 ease-in-out"
+                            required
+                        />
+                        <input
+                            type="text"
+                            name="lastName"
+                            placeholder="Last Name"
+                            className="border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-500"
+                            onChange={handleChange}
                             required
                         />
                     </div>
-                ))}
-                <button
-                    type="submit"
-                    className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-200"
-                >
-                    Submit
-                </button>
-            </form>
+
+                    <input
+                        type="text"
+                        name="address"
+                        placeholder="Address"
+                        className="border border-gray-300 rounded-lg w-full p-3 focus:ring-2 focus:ring-green-500"
+                        onChange={handleChange}
+                        required
+                    />
+
+                    <div className="grid grid-cols-2 gap-4">
+                        <input
+                            type="text"
+                            name="district"
+                            placeholder="District"
+                            className="border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-500"
+                            onChange={handleChange}
+                            required
+                        />
+                        <input
+                            type="text"
+                            name="state"
+                            placeholder="State"
+                            className="border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-500"
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                    <input
+                        type="number"
+                        name="pincode"
+                        placeholder="Pincode"
+                        className="border border-gray-300 rounded-lg w-full p-3 focus:ring-2 focus:ring-green-500"
+                        onChange={handleChange}
+                        required
+                    />
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        className="border border-gray-300 rounded-lg w-full p-3 focus:ring-2 focus:ring-green-500"
+                        onChange={handleChange}
+                        required
+                    />
+
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        className="border border-gray-300 rounded-lg w-full p-3 focus:ring-2 focus:ring-green-500"
+                        onChange={handleChange}
+                        required
+                    />
+
+                    <button
+                        type="submit"
+                        className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-all"
+                    >
+                        Sign Up
+                    </button>
+                </form>
+
+                <div className="text-center mt-4">
+                    <p className="text-gray-600 text-sm">Already have an account?</p>
+                    <button
+                        onClick={() => navigate("/login")}
+                        className="mt-2 w-full bg-gray-200 text-green-700 py-2 rounded-lg hover:bg-gray-300 transition-all"
+                    >
+                        Login
+                    </button>
+                </div>
+            </div>
         </div>
     );
 };

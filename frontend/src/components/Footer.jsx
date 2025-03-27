@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -28,9 +29,9 @@ const Footer = () => {
                     <div className="mb-8 md:mb-0">
                         <h4 className="text-lg text-black font-semibold mb-4">Contact Info</h4>
                         <ul className="text-gray-700">
-                            <li className="mb-2"> Sector 2, Greater Noida West, Uttar Pradesh, India</li>
+                            <li className="mb-2">Sector 2, Greater Noida West, Uttar Pradesh, India</li>
                             <li className="mb-2">Phone: +91 9031036321</li>
-                            <li className="mb-2">Email: Contact@FlatsAI.com </li>
+                            <li className="mb-2">Email: Contact@FlatsAI.com</li>
                         </ul>
                     </div>
 
@@ -38,24 +39,32 @@ const Footer = () => {
                     <div>
                         <h4 className="text-lg text-black font-semibold mb-4">Follow Us</h4>
                         <div className="flex space-x-4">
-                            <a href="https://www.facebook.com/profile.php?id=61570928146428" className="text-blue-400 hover:text-white">
-                                <i className="fab fa-facebook-f"></i>
+                            <a href="https://www.facebook.com/profile.php?id=61570928146428" 
+                                className="text-blue-600 hover:text-white hover:scale-110 transition-transform duration-300">
+                                <FaFacebookF size={24} />
                             </a>
-                            <a href="https://x.com/Flats_AI?t=B_zQfDgejsW6EZdjWNHcDg&s=08" className="text-blue-500 hover:text-white">
-                                <i className="fab fa-twitter"></i>
+                            <a href="https://x.com/Flats_AI?t=B_zQfDgejsW6EZdjWNHcDg&s=08" 
+                                className="text-blue-400 hover:text-white hover:scale-110 transition-transform duration-300">
+                                <FaTwitter size={24} />
                             </a>
-                            <a href="https://www.instagram.com/flats_ai?igsh=Y2FjaWF4OWZxYWxs" className="text-red-400 hover:text-white">
-                                <i className="fab fa-instagram"></i>
+                            <a href="https://www.instagram.com/flats_ai?igsh=Y2FjaWF4OWZxYWxs" 
+                                className="text-pink-500 hover:text-white hover:scale-110 transition-transform duration-300">
+                                <FaInstagram size={24} />
                             </a>
-                            <a href="https://www.linkedin.com/in/connect-suraj/" className="text-blue-700 hover:text-white">
-                                <i className="fab fa-linkedin-in"></i>
+                            <a href="https://www.linkedin.com/in/connect-suraj/" 
+                                className="text-blue-700 hover:text-white hover:scale-110 transition-transform duration-300">
+                                <FaLinkedinIn size={24} />
+                            </a>
+                            <a href="https://www.youtube.com/@Flats_AI" 
+                                className="text-red-600 hover:text-white hover:scale-110 transition-transform duration-300">
+                                <FaYoutube size={24} />
                             </a>
                         </div>
                     </div>
                 </div>
 
                 {/* Copyright */}
-                <div className="border-t text-black border-gray-700 mt-8 pt-8 text-center ">
+                <div className="border-t text-black border-gray-700 mt-8 pt-8 text-center">
                     <p>&copy; {new Date().getFullYear()} FlatsAI. All rights reserved.</p>
                 </div>
             </div>

@@ -17,7 +17,7 @@ const AboutUs = () => {
                 {/* Company Info */}
                 <div className="mt-10 grid md:grid-cols-2 gap-8 items-center">
                     <img
-                        src="/background.webp"
+                        src="/trust.png"
                         alt="Real Estate"
                         className="w-full rounded-lg shadow-lg"
                     />
@@ -50,7 +50,7 @@ const AboutUs = () => {
                 </div>
 
                 {/* Our Team */}
-                <div className="mt-16">
+                {/* <div className="mt-16">
                     <h3 className="text-2xl font-semibold text-gray-800 text-center">
                         Meet Our Team
                     </h3>
@@ -71,7 +71,7 @@ const AboutUs = () => {
                             </div>
                         ))}
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     );
