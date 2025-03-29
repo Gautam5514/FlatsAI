@@ -9,11 +9,11 @@ export const handleContactForm = async (req, res) => {
     if (!name || !email || !phone || !message) {
         return res.status(400).json({ error: "All fields are required" });
     }
-
+    console.log(name, email, phone, message);  
     try {
         // Save to MongoDB
-        const newContact = await contact.create({ name, email, phone, message });
-        await newContact.save();
+        await contact.create({ name, email, phone, message });
+        
 
         const whatsappMessage = `📩 New Contact Request:\n👤 Name: ${name}\n📧 Email: ${email}\n📱 Phone: ${phone}\n💬 Message: ${message}`;
 
