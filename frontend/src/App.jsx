@@ -28,6 +28,7 @@ import AreaConverter from "./pages/AreaConverter";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import ProtectedRoute from "./pages/ProtectedRouts";
+// import Logout from "./pages/Logout";
 
 function App() {
 
@@ -38,7 +39,7 @@ function App() {
         <Navbar />
         <Routes>
           {/* Public Routes */}
-          <Route path="/contact" element={ <ContactUs /> }/>
+          <Route path="/contact" element={<ContactUs />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />
           <Route
@@ -60,6 +61,7 @@ function App() {
           />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          {/* <Route path="/logout" element={<Logout />} /> */}
 
           {/* Private Routes (Protected) */}
           <Route

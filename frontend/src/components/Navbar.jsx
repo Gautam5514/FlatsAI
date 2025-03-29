@@ -1,10 +1,31 @@
 import React, { useState } from 'react';
 import { Phone, User, Menu, X } from 'lucide-react';
 import { Link } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import Logout from '../pages/Logout';
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../redux/authSlice.js"; // Correct import
+
+
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const { user } = useSelector((store) => store.auth);
+
+    // const [showPopup, setShowPopup] = useState(false);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+
+    // Handle logout action
+    const handleLogout = () => {
+        dispatch(logout()); // Correct function call
+        navigate("/login"); // Redirect to login page
+    };
+
+
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -92,12 +113,27 @@ const Navbar = () => {
                             <span className="ml-2">+91 9031036321</span>
                         </div>
 
-                        <Link to="/signup">
+                        {/* <Link to="/signup">
                             <div className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 cursor-pointer">
                                 <User className="h-5 w-5 text-gray-700" />
                             </div>
-                        </Link>
+                        </Link> */}
 
+                        {user ? <div >
+                            {/* Logout Button */}
+                            <button
+                                className="bg-red-500 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-red-600 transition-all duration-300 transform hover:scale-105"
+                                onClick={handleLogout}
+                            >
+                                Logout
+                            </button>
+
+                        </div> : <Link to="/signup">
+                            <div className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 cursor-pointer">
+                                 
+                                <User className="h-5 w-5 text-gray-700" />
+                            </div>
+                        </Link>}
                         <a href="#" className="bg-white hover:bg-gray-50 text-gray-800 font-medium py-2 px-4 border border-gray-300 rounded-md shadow-sm">
                             Add Property
                         </a>
@@ -132,6 +168,23 @@ const Navbar = () => {
                         <button className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900">
                             <Link to="/contact">Contact</Link>
                         </button>
+                        {user ? (
+                            <div className="flex items-center md:hidden"> {/* Visible only on mobile */}
+                                <button
+                                    className="bg-red-500 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:bg-red-600 transition-all duration-300 transform hover:scale-105 text-sm"
+                                    onClick={handleLogout}
+                                >
+                                    Logout
+                                </button>
+                            </div>
+                        ) : (
+                            <Link to="/signup" className="flex items-center md:hidden"> {/* Visible only on mobile */}
+                                <div className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 cursor-pointer flex justify-center items-center">
+                                    <User className="h-5 w-5 text-gray-700" />
+                                </div>
+                            </Link>
+                        )}
+
                     </div>
                 </div>
             )}
