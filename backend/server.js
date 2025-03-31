@@ -21,6 +21,10 @@ app.use(express.json()); // No need for body-parser
 app.use("/api/contact", contactRoutes);
 app.use("/api/auth", authRoutes);
 
+app.get("/", (req, res) => {
+    res.send("Hello from express")
+})
+
 const PORT = process.env.PORT || 5000;
 
 // Start server
