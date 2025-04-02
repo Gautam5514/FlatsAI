@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const API_URL = "http://localhost:3000/api/contact/";
+const API_URL = "https://flatsai.onrender.com/api/contact/";
 
 const ContactUs = () => {
     const [formData, setFormData] = useState({

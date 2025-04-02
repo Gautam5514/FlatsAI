@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api/auth";
+const API_URL = "https://flatsai.onrender.com/api/auth";
 
 export const signup = async (userData) => {
   const response = await fetch(`${API_URL}/signup`, {
