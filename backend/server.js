@@ -21,7 +21,7 @@ app.use(express.json()); // No need for body-parser
 app.use("/api/contact", contactRoutes);
 app.use("/api/auth", authRoutes);
 
-app.get("/", (req, res) => {
+app.get('/', (req, res) => {
     res.send("Hello from express")
 })
 
