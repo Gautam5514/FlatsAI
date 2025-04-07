@@ -70,9 +70,9 @@ function App() {
               <>
                 <HeroSection />
                 <SearchBar />
-                <AboutUs />
                 <PropertyCategories />
                 <PropertyDealsCarousel />
+                <AboutUs />
                 <RealEstateServices />
                 <InsightsTools />
               </>
