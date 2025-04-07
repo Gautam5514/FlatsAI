@@ -11,7 +11,7 @@ import { logout } from "../redux/authSlice.js"; // Correct import
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const { user } = useSelector((store) => store.auth);
 
     // const [showPopup, setShowPopup] = useState(false);
@@ -31,13 +31,13 @@ const Navbar = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    const toggleDropdown = () => {
-        setIsDropdownOpen(!isDropdownOpen);
-    };
+    // const toggleDropdown = () => {
+    //     setIsDropdownOpen(!isDropdownOpen);
+    // };
 
-    const closeDropdown = () => {
-        setIsDropdownOpen(false);
-    };
+    // const closeDropdown = () => {
+    //     setIsDropdownOpen(false);
+    // };
 
     return (
         <nav className="bg-green-400 shadow-sm">
@@ -49,15 +49,16 @@ const Navbar = () => {
                         <button className="text-gray-700 hover:text-gray-900 font-medium">
                             <Link to="/listings">Listings</Link>
                         </button>
+                        
                         <button className="text-gray-700 hover:text-gray-900 font-medium">
-                            <Link to="/members">Members</Link>
+                            <Link className="/">AI Security</Link>
                         </button>
                         <button className="text-gray-700 hover:text-gray-900 font-medium">
                             <Link to="/blog">Blogs</Link>
                         </button>
 
                         {/* Dropdown for Pages */}
-                        <div className="relative">
+                        {/* <div className="relative">
                             <button
                                 className="flex items-center text-gray-700 hover:text-gray-900 font-medium"
                                 onClick={toggleDropdown}
@@ -84,7 +85,11 @@ const Navbar = () => {
                                     </ul>
                                 </div>
                             )}
-                        </div>
+                        </div> */}
+                        <button className="text-gray-700 hover:text-gray-900 font-medium">
+                            {/* <Link to="/members">Members</Link> */}
+                            <Link to="/">Other Services</Link>
+                        </button>
 
                         <button className="text-gray-700 hover:text-gray-900 font-medium">
                             <Link to="/contact">Contact</Link>

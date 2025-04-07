@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 
 const HeroSection = () => {
     return (
-        <section className="relative text-center bg-gradient-to-b from-green-400 to-white py-16 px-6 md:py-24 bg-cover bg-center overflow-hidden">
+        <section className="relative text-center bg-gradient-to-b from-green-400 to-white py-16 px-6 md:py-24 bg-cover bg-center overflow-hidden"
+        style={{
+            backgroundImage: "url('/bg1.jpg')",
+        }}
+        >
             <div className="absolute inset-0 bg-green-100 opacity-30 animate-pulse"></div>
             <div className="relative z-10">
                 <h1 className="text-4xl md:text-6xl font-extrabold text-gray-800 mb-4 animate-fadeIn">
