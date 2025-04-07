@@ -118,7 +118,7 @@ const Navbar = () => {
                     <div className="hidden md:flex items-center space-x-4">
                         <div className="flex items-center text-gray-700">
                             <Phone className="h-5 w-5" />
-                            <span className="ml-2">+91 9031036321</span>
+                            <span className="ml-2">(+91) 903 103 6321</span>
                         </div>
 
                         {/* <Link to="/signup">

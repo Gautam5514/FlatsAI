@@ -122,11 +122,11 @@ const ContactUs = () => {
                             </div>
                             <div className="flex items-center">
                                 <i className="fas fa-phone text-blue-600 mr-4"></i>
-                                <p className="text-gray-700">+91 95342 01906</p>
+                                <p className="text-gray-700">(+91) 903 103 6321</p>
                             </div>
                             <div className="flex items-center">
                                 <i className="fas fa-envelope text-blue-600 mr-4"></i>
-                                <p className="text-gray-700">info@realestateco.com</p>
+                                <p className="text-gray-700">Contact@FlatsAI.com</p>
                             </div>
                         </div>
 
