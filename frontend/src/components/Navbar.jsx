@@ -94,17 +94,20 @@ const Navbar = () => {
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center">
                         <div className="flex items-center">
+                            {/* Replace SVG with your logo image */}
                             <div className="h-8 w-8">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
-                                    <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                    <path d="M9 22V12H15V22" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
+                                <img
+                                    src="/flats_logo.jpg"
+                                    alt="Company Logo"
+                                    className="h-full w-full object-contain"
+                                />
                             </div>
                             <span className="ml-2 text-xl font-bold text-gray-800">
                                 <Link to="/">FlatsAI</Link>
                             </span>
                         </div>
                     </div>
+
 
                     {/* Right Side */}
                     <div className="hidden md:flex items-center space-x-4">
@@ -130,7 +133,7 @@ const Navbar = () => {
 
                         </div> : <Link to="/signup">
                             <div className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 cursor-pointer">
-                                 
+
                                 <User className="h-5 w-5 text-gray-700" />
                             </div>
                         </Link>}
