@@ -134,7 +134,7 @@ const ContactUs = () => {
                         <div className="mt-8">
                             <iframe
                                 title="Company Location"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093747!2d144.95373531531615!3d-37.816279742021665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d2a6c5bf4c4e!2s123%20Main%20St%2C%20City%2C%20Country!5e0!3m2!1sen!2sus!4v1622549400000!5m2!1sen!2sus"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d84155.2332891947!2d85.25998822642622!3d23.324356307211467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e104aa5db7dd%3A0xdc09d49d6899f43e!2sRanchi%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1744052418448!5m2!1sen!2sin"
                                 width="100%"
                                 height="300"
                                 style={{ border: 0 }}
