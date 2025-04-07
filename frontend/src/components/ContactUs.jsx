@@ -122,7 +122,7 @@ const ContactUs = () => {
                             </div>
                             <div className="flex items-center">
                                 <i className="fas fa-phone text-blue-600 mr-4"></i>
-                                <p className="text-gray-700">+1 (234) 567-890</p>
+                                <p className="text-gray-700">+91 95342 01906</p>
                             </div>
                             <div className="flex items-center">
                                 <i className="fas fa-envelope text-blue-600 mr-4"></i>
