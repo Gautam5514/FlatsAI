@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -14,14 +15,18 @@ const Footer = () => {
                         </p>
                     </div>
 
-                    {/* Quick Links */}
+                     {/* Quick Links  */}
                     <div className="mb-8 md:mb-0">
                         <h4 className="text-lg text-black font-semibold mb-4">Quick Links</h4>
                         <ul className="text-gray-800">
-                            <li className="mb-2"><a href="/about" className="hover:text-white">About Us</a></li>
-                            <li className="mb-2"><a href="/listings" className="hover:text-white">Listings</a></li>
-                            <li className="mb-2"><a href="/services" className="hover:text-white">Services</a></li>
-                            <li className="mb-2"><a href="/contact" className="hover:text-white">Contact Us</a></li>
+                            <li className="mb-2"><Link to="/about" className="hover:text-white">About Us</Link>
+                            </li>
+                            <li className="mb-2"><Link to="/listings" className="hover:text-white">Listings</Link>
+                            </li>
+                            <li className="mb-2"><Link to="/services" className="hover:text-white">Services</Link>
+                            </li>
+                            <li className="mb-2"><Link to="/contact" className="hover:text-white">Contact Us</Link>
+                            </li>
                         </ul>
                     </div>
 
@@ -39,23 +44,23 @@ const Footer = () => {
                     <div>
                         <h4 className="text-lg text-black font-semibold mb-4">Follow Us</h4>
                         <div className="flex space-x-4">
-                            <a href="https://www.facebook.com/profile.php?id=61570928146428" 
+                            <a href="https://www.facebook.com/profile.php?id=61570928146428"
                                 className="text-blue-600 hover:text-white hover:scale-110 transition-transform duration-300">
                                 <FaFacebookF size={24} />
                             </a>
-                            <a href="https://x.com/Flats_AI?t=B_zQfDgejsW6EZdjWNHcDg&s=08" 
+                            <a href="https://x.com/Flats_AI?t=B_zQfDgejsW6EZdjWNHcDg&s=08"
                                 className="text-blue-400 hover:text-white hover:scale-110 transition-transform duration-300">
                                 <FaTwitter size={24} />
                             </a>
-                            <a href="https://www.instagram.com/flats_ai?igsh=Y2FjaWF4OWZxYWxs" 
+                            <a href="https://www.instagram.com/flats_ai?igsh=Y2FjaWF4OWZxYWxs"
                                 className="text-pink-500 hover:text-white hover:scale-110 transition-transform duration-300">
                                 <FaInstagram size={24} />
                             </a>
-                            <a href="https://www.linkedin.com/in/connect-suraj/" 
+                            <a href="https://www.linkedin.com/in/connect-suraj/"
                                 className="text-blue-700 hover:text-white hover:scale-110 transition-transform duration-300">
                                 <FaLinkedinIn size={24} />
                             </a>
-                            <a href="https://www.youtube.com/@Flats_AI" 
+                            <a href="https://www.youtube.com/@Flats_AI"
                                 className="text-red-600 hover:text-white hover:scale-110 transition-transform duration-300">
                                 <FaYoutube size={24} />
                             </a>
