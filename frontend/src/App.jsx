@@ -16,7 +16,6 @@ import Noida from "./pages/Noida";
 import Dholera from "./pages/Dholera";
 import Vrindavan from "./pages/Vrindavan";
 import Mumbai from "./pages/Mumbai";
-import DelhiNCR from "./pages/DelhiNCR";
 import RealEstateServices from "./components/MaterialAdd";
 import ResidentialRentals from "./pages/ResidentialRental";
 import PropertyPurchase from "./pages/PropertyPurchase";
@@ -28,6 +27,7 @@ import AreaConverter from "./pages/AreaConverter";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import ProtectedRoute from "./pages/ProtectedRouts";
+import DelhiNCR from "./pages/DelhiNCR";
 // import Logout from "./pages/Logout";
 
 function App() {
@@ -113,7 +113,7 @@ function App() {
             }
           />
           <Route
-            path="/location/delhincr"
+            path="/location/delhi-ncr"
             element={
               <ProtectedRoute>
                 <DelhiNCR />
