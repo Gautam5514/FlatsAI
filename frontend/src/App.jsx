@@ -28,6 +28,8 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import ProtectedRoute from "./pages/ProtectedRouts";
 import DelhiNCR from "./pages/DelhiNCR";
+import AiSecurity from "./pages/AiSecurity";
+import OtherServices from "./pages/OtherServices";
 // import Logout from "./pages/Logout";
 
 function App() {
@@ -42,6 +44,9 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/ai-security" element={<AiSecurity />} />
+          <Route path="/other-services" element={< OtherServices />} />
+          
           <Route
             path="/listings"
             element={

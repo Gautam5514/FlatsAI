@@ -51,7 +51,7 @@ const Navbar = () => {
                         </button>
                         
                         <button className="text-gray-700 hover:text-gray-900 font-medium">
-                            <Link className="/">AI Security</Link>
+                            <Link to="/ai-security">AI Security</Link>
                         </button>
                         <button className="text-gray-700 hover:text-gray-900 font-medium">
                             <Link to="/blog">Blogs</Link>
@@ -88,7 +88,7 @@ const Navbar = () => {
                         </div> */}
                         <button className="text-gray-700 hover:text-gray-900 font-medium">
                             {/* <Link to="/members">Members</Link> */}
-                            <Link to="/">Other Services</Link>
+                            <Link to="/other-services">Other Services</Link>
                         </button>
 
                         <button className="text-gray-700 hover:text-gray-900 font-medium">
