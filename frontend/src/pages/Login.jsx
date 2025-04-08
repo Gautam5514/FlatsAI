@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "../redux/authSlice.js";
 import { login } from "../../api.js";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -69,12 +70,12 @@ const Login = () => {
 
           {/* Forgot Password & Signup Link */}
           <div className="flex justify-between text-sm mt-3">
-            <a href="/forgot-password" className="text-blue-500 hover:underline">
+            {/* <a href="/forgot-password" className="text-blue-500 hover:underline">
               Forgot Password?
-            </a>
-            <a href="/signup" className="text-blue-500 hover:underline">
+            </a> */}
+            <Link to="/signup" className="text-blue-500 hover:underline">
               Create an Account
-            </a>
+            </Link>
           </div>
 
           {/* New Sign-Up Button */}
