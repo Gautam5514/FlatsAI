@@ -102,7 +102,7 @@ const Navbar = () => {
                             {/* Replace SVG with your logo image */}
                             <div className="h-8 w-8">
                                 <img
-                                    src="/flats_logo.jpg"
+                                    src="/svg_logo.svg"
                                     alt="Company Logo"
                                     className="h-full w-full object-contain"
                                 />
