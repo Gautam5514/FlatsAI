@@ -80,7 +80,7 @@ const PropertyDealsCarousel = () => {
                     <h2 className="text-3xl font-bold text-gray-800 mb-2">
                         Discover Our Best Deals
                     </h2>
-                    <p className="text-gray-600">Lorem ipsum dolor sit amet</p>
+                    <p className="text-gray-600">Our Property</p>
                 </div>
 
                 {/* Carousel */}
