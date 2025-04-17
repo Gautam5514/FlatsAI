@@ -87,42 +87,38 @@ function App() {
           {/* Location Pages (Protected) */}
           <Route
             path="/location/noida"
-            element={
-              <ProtectedRoute>
-                <Noida />
-              </ProtectedRoute>
-            }
+            element={ <Noida /> }
           />
+
           <Route
             path="/location/dholera"
-            element={
-              <ProtectedRoute>
-                <Dholera />
-              </ProtectedRoute>
-            }
+            element={  <Dholera /> }
           />
+
           <Route
             path="/location/vrindavan"
             element={
-              <ProtectedRoute>
+              
                 <Vrindavan />
-              </ProtectedRoute>
+              
             }
           />
+
           <Route
             path="/location/mumbai"
             element={
-              <ProtectedRoute>
+              
                 <Mumbai />
-              </ProtectedRoute>
+              
             }
           />
+
           <Route
             path="/location/delhi-ncr"
             element={
-              <ProtectedRoute>
+              
                 <DelhiNCR />
-              </ProtectedRoute>
+
             }
           />
 
@@ -130,33 +126,33 @@ function App() {
           <Route
             path="/residential-rentals"
             element={
-              <ProtectedRoute>
+              
                 <ResidentialRentals />
-              </ProtectedRoute>
+
             }
           />
           <Route
             path="/property-purchase"
             element={
-              <ProtectedRoute>
+              
                 <PropertyPurchase />
-              </ProtectedRoute>
+              
             }
           />
           <Route
             path="/builder-partnerships"
             element={
-              <ProtectedRoute>
+              
                 <BuilderPartnerships />
-              </ProtectedRoute>
+              
             }
           />
           <Route
             path="/interior-design"
             element={
-              <ProtectedRoute>
+              
                 <InteriorDesign />
-              </ProtectedRoute>
+              
             }
           />
 
@@ -164,17 +160,17 @@ function App() {
           <Route
             path="/emi"
             element={
-              <ProtectedRoute>
+              
                 <EMICalculator />
-              </ProtectedRoute>
+              
             }
           />
           <Route
             path="/area-converter"
             element={
-              <ProtectedRoute>
+              
                 <AreaConverter />
-              </ProtectedRoute>
+              
             }
           />
         </Routes>
