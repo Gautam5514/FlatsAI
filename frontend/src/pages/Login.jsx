@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../redux/authSlice.js";
 import { login } from "../../api.js";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -16,13 +18,14 @@ const Login = () => {
       const res = await login(formData);
       if (res?.user) {
         dispatch(setUser(res.user));
+        toast.success("Login successful!"); // Success toast
         navigate("/");
       } else {
-        alert("Invalid credentials. Please try again.");
+        toast.error("Invalid credentials. Please try again."); // Error toast
       }
     } catch (error) {
       console.error("Login failed:", error);
-      alert("Something went wrong. Please try again.");
+      toast.error("Something went wrong. Please try again."); // Error toast
     }
   };
 
@@ -101,6 +104,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <ToastContainer  /> {/* Toast container with 3-second auto-close */}
     </div>
   );
 };

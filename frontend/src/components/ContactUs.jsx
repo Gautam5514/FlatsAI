@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const API_URL = "https://flatsai.onrender.com/api/contact/";
 
@@ -11,7 +13,6 @@ const ContactUs = () => {
     });
 
     const [loading, setLoading] = useState(false);
-    const [responseMsg, setResponseMsg] = useState("");
 
     // Handle input changes
     const handleChange = (e) => {
@@ -35,11 +36,11 @@ const ContactUs = () => {
             }
     
             const data = await response.json();
-            setResponseMsg(data.message || "Message sent successfully!");
+            toast.success(data.message || "Message sent successfully!"); // Instant success toast
             setFormData({ name: "", email: "", phone: "", message: "" });
         } catch (error) {
             console.error("Error submitting form:", error);
-            setResponseMsg("Server error. Please try again later.");
+            toast.error("Server error. Please try again later."); // Instant error toast
         }
     
         setLoading(false);
@@ -108,7 +109,6 @@ const ContactUs = () => {
                             >
                                 {loading ? "Sending..." : "Send Message"}
                             </button>
-                            {responseMsg && <p className="mt-4 text-center text-green-600">{responseMsg}</p>}
                         </form>
                     </div>
 
@@ -145,6 +145,7 @@ const ContactUs = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer /> 
         </section>
     );
 };

@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { signup } from "../../api";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Signup = () => {
     const [formData, setFormData] = useState({
@@ -23,8 +25,18 @@ const Signup = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const res = await signup(formData);
-        if (res.message === "Signup successful, please login") navigate("/login");
+        try {
+            const res = await signup(formData);
+            if (res.message === "Signup successful, please login") {
+                toast.success("Signup successful! Redirecting to login..."); // Success toast
+                navigate("/login");
+            } else {
+                toast.error(res.message || "Signup failed. Please try again."); // Error toast
+            }
+        } catch (error) {
+            console.error("Signup failed:", error);
+            toast.error("Something went wrong. Please try again."); // Error toast
+        }
     };
 
     return (
@@ -69,6 +81,7 @@ const Signup = () => {
                     </button>
                 </div>
             </div>
+            <ToastContainer  /> 
         </div>
     );
 };
