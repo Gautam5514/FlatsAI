@@ -6,6 +6,8 @@ import { login } from "../../api.js";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { signInWithPopup } from "firebase/auth";
+import { auth, provider } from "../../firebase"; // adjust path accordingly
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -18,14 +20,35 @@ const Login = () => {
       const res = await login(formData);
       if (res?.user) {
         dispatch(setUser(res.user));
-        toast.success("Login successful!"); // Success toast
+        toast.success("Login successful!");
         navigate("/");
       } else {
-        toast.error("Invalid credentials. Please try again."); // Error toast
+        toast.error("Invalid credentials. Please try again.");
       }
     } catch (error) {
       console.error("Login failed:", error);
-      toast.error("Something went wrong. Please try again."); // Error toast
+      toast.error("Something went wrong. Please try again.");
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+
+      const userData = {
+        name: user.displayName,
+        email: user.email,
+        photo: user.photoURL,
+        uid: user.uid,
+      };
+
+      dispatch(setUser(userData)); // Save in redux
+      toast.success("Google Login successful!");
+      navigate("/");
+    } catch (error) {
+      console.error("Google Login error:", error);
+      toast.error("Google login failed. Please try again.");
     }
   };
 
@@ -37,7 +60,6 @@ const Login = () => {
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Email Field */}
           <div>
             <label className="block text-gray-700 font-medium">Email</label>
             <input
@@ -50,7 +72,6 @@ const Login = () => {
             />
           </div>
 
-          {/* Password Field */}
           <div>
             <label className="block text-gray-700 font-medium">Password</label>
             <input
@@ -63,7 +84,6 @@ const Login = () => {
             />
           </div>
 
-          {/* Login Button */}
           <button
             type="submit"
             className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 shadow-md hover:shadow-lg cursor-pointer"
@@ -71,17 +91,12 @@ const Login = () => {
             Login
           </button>
 
-          {/* Forgot Password & Signup Link */}
           <div className="flex justify-between text-sm mt-3">
-            {/* <a href="/forgot-password" className="text-blue-500 hover:underline">
-              Forgot Password?
-            </a> */}
             <Link to="/signup" className="text-blue-500 hover:underline">
               Create an Account
             </Link>
           </div>
 
-          {/* New Sign-Up Button */}
           <button
             type="button"
             className="w-full mt-3 bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition-all duration-200 shadow-md hover:shadow-lg cursor-pointer"
@@ -91,11 +106,13 @@ const Login = () => {
           </button>
         </form>
 
-        {/* Social Media Login */}
         <div className="text-center mt-6">
           <p className="text-gray-600 text-sm">Or Sign in with</p>
           <div className="flex justify-center mt-4 space-x-4">
-            <button className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-all duration-200 shadow-md hover:shadow-lg cursor-pointer">
+            <button
+              onClick={handleGoogleLogin}
+              className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-all duration-200 shadow-md hover:shadow-lg cursor-pointer"
+            >
               Google
             </button>
             <button className="bg-blue-800 text-white px-4 py-2 rounded-lg hover:bg-blue-900 transition-all duration-200 shadow-md hover:shadow-lg cursor-pointer">
@@ -104,7 +121,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <ToastContainer  /> {/* Toast container with 3-second auto-close */}
+      <ToastContainer />
     </div>
   );
 };
